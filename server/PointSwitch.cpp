@@ -1,28 +1,42 @@
 #include <stdio.h>
-//#include <wiringPi.h>
-//#include <softPwm.h>  
-int main( void)
+#include "PointSwitch.h"
+
+
+CPointSwitch::CPointSwitch(unsigned int pinNumber, unsigned int pinMode, unsigned int pullAndDown, gpioCallBack fun)
 {
-    int pwm_gpio5 = 1; 
-    int i=0;
- /*
-    wiringPiSetup();   
-    pinMode(pwm_gpio5 ,PWM_OUTPUT);
-    printf("pwm_gpio5 is blinking...\n");    
-    for(;;)
+
+    m_PinNumber = pinNumber;
+    m_PinMode = pinMode;
+    m_PullAndDown = pullAndDown; 
+    gpioSetMode(m_PinNumber, m_PinMode);
+    gpioSetPullUpDown(m_PinNumber, pullAndDown);
+    gpioSetAlertFunc(m_PinNumber, &gpioAlertFunc);
+    callback = fun;
+    
+
+}
+
+CPointSwitch::~CPointSwitch()
+{
+
+
+
+    
+}
+int CPointSwitch::setValue(unsigned int value)
+{
+    return gpioWrite(m_PinNumber, value);
+}
+
+int CPointSwitch::getValue(unsigned int &value)
+{
+    value = gpioRead(value);
+    return 0;
+}
+void CPointSwitch::gpioAlertFunc(int gpio, int level, unsigned int tick)
+{
+    if(callback != NULL)
     {
-        for(i=0;i<1024;i++)
-        {
-            pwmWrite(1,i);
-            delay(10);
-            printf("Testing is %d......\n",i);    
-        }
-        for(i=1023;i>0;i--)
-        {
-            pwmWrite(1,i);
-            delay(10);
-            printf("Testing is %d......\n",i);    
-        }
+        callback(level);
     }
-    */
 }

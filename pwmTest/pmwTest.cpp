@@ -1,10 +1,11 @@
 #include <stdio.h>
-#include <wiringPi.h>
-#include <softPwm.h>  
+//#include <wiringPi.h>
+//#include <softPwm.h>  
 int main( void)
 {
     int pwm_gpio5 = 1; 
     int i=0;
+ /*
     wiringPiSetup();   
     pinMode(pwm_gpio5 ,PWM_OUTPUT);
     printf("pwm_gpio5 is blinking...\n");    
@@ -23,4 +24,5 @@ int main( void)
             printf("Testing is %d......\n",i);    
         }
     }
+    */
 }

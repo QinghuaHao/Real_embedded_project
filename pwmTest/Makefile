@@ -1,5 +1,5 @@
 FILES = \
-        pmwTest.cpp \
+        pwmTest.cpp \
       
 
 OBJS = $(patsubst %.cpp, %.o, $(FILES))
@@ -12,14 +12,14 @@ INCLUDES += -I ./
 
 
 
-EXENAME = pmwTest
+EXENAME = pwmTest
 BIN = ./$(EXENAME)
 
 CPPFLAGS= -g -Wall -O0
-CPPFLAGS  +=  "-msse" -march=core2  -fomit-frame-pointer 
+CPPFLAGS  +=   -fomit-frame-pointer 
 CPPFLAGS  +=  -Wall -Wundef -Wpointer-arith -fPIC
 
-LIBS = -lpthread -lrt  -lm -lwiringPi
+LIBS = -lpthread -lrt  -lm -lpigpio
 LIBPATH = \
           -L ./ \
  

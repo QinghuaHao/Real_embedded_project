@@ -1,6 +1,8 @@
 FILES = \
-        pmwTest.cpp \
-      
+        main.cpp \
+
+#	PointSwitch.cpp \
+ 	SteeringEngine.cpp \     
 
 OBJS = $(patsubst %.cpp, %.o, $(FILES))
 
@@ -12,14 +14,14 @@ INCLUDES += -I ./
 
 
 
-EXENAME = pmwTest
+EXENAME = server
 BIN = ./$(EXENAME)
 
 CPPFLAGS= -g -Wall -O0
 CPPFLAGS  +=   -fomit-frame-pointer 
 CPPFLAGS  +=  -Wall -Wundef -Wpointer-arith -fPIC
 
-LIBS = -lpthread -lrt  -lm 
+LIBS = -lpthread -lrt  -lm -lpigpio
 LIBPATH = \
           -L ./ \
  
