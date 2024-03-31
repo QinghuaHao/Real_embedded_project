@@ -3,7 +3,7 @@
 //#include <softPwm.h>  
 #include "pigpio.h"
 #include <unistd.h>
-#define OUTPUT_MODE
+#define INPUT_MODE
 #define GPIO_PIN 21
 
 
@@ -21,13 +21,18 @@ int main( void)
    		printf("pigpio initialisation ok.\n");
 	}
 
-  gpioSetMode(GPIO_PIN, PI_OUTPUT);
+  	gpioSetMode(GPIO_PIN, PI_OUTPUT);
 
 	gpioWrite(GPIO_PIN, 1);
 	gpioTerminate();
 }
 #endif
 #ifdef INPUT_MODE 
+void callBack(int pin, int level, unsigned int tick)
+{
+	printf("pin:%d level:%d\n", pin, level);
+
+}
 int main( void)
 {
     	int ret = 0;
@@ -41,7 +46,8 @@ int main( void)
 	}
 	gpioSetMode(GPIO_PIN, PI_INPUT);
     	gpioSetPullUpDown(GPIO_PIN, PI_PUD_DOWN);
-	for(int i = 0; i < 10; i++)
+	gpioSetAlertFunc(GPIO_PIN, callBack);
+	for(int i = 0; i < 20; i++)
 	{
 		sleep(1);
 		ret = gpioRead(GPIO_PIN);
