@@ -1,8 +1,7 @@
 FILES = \
         main.cpp \
-
-#	PointSwitch.cpp \
- 	SteeringEngine.cpp \     
+	PointSwitch.cpp \
+ 	SteeringEngine.cpp \
 
 OBJS = $(patsubst %.cpp, %.o, $(FILES))
 

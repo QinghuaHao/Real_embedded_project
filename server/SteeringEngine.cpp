@@ -2,11 +2,11 @@
 #include "SteeringEngine.h"
 
 
-CSteeringEngine::CSteeringEngine(unsigned int pinNumber, unsigned int dutycycle)
+CSteeringEngine::CSteeringEngine(unsigned int pinNumber ,unsigned int initStatus)
 {
 
-    m_PinNumber = pinNumber;
-    gpioPWM(m_PinNumber, pinNumber);
+	m_PinNumber = pinNumber;
+	m_InitStatus = initStatus;
 
 }
 CSteeringEngine::~CSteeringEngine()
@@ -14,6 +14,19 @@ CSteeringEngine::~CSteeringEngine()
 
 
     
+}
+
+int CSteeringEngine::init()
+{	
+
+	gpioSetMode(m_PinNumber , PI_OUTPUT);
+	gpioSetPWMrange(m_PinNumber , 180);
+	gpioSetPWMfrequency(m_PinNumber , 50);
+	gpioPWM(m_PinNumber, 5+m_InitStatus*17/180);
+}
+int CSteeringEngine::setStatus(unsigned int value)
+{	
+	return gpioPWM(m_PinNumber, 5+value*17/180);
 }
 int CSteeringEngine::setPWMrange(unsigned int value)
 {

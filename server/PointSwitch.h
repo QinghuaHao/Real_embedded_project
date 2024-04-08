@@ -2,7 +2,7 @@
 #define POINT_SWITCH_H_
 #include "pigpio.h"
 
-typedef void (*gpioCallBack) (int level);
+
 class CPointSwitch
 {
 private:
@@ -10,9 +10,9 @@ private:
     int m_PinMode;  
     int m_PullAndDown;  
     void* callback(unsigned int level);
-    void gpioAlertFunc(int gpio, int level, unsigned int tick);
+
 public:
-	CPointSwitch(unsigned int pinNumber, unsigned int pinMode, unsigned int pullAndDown, gpioCallBack fun);
+	CPointSwitch(unsigned int pinNumber, unsigned int pinMode, unsigned int pullAndDown,  gpioAlertFunc_t callBackFun);
 	~CPointSwitch();
 public:
     int getValue(unsigned int &value);

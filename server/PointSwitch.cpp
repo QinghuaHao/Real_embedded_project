@@ -2,16 +2,17 @@
 #include "PointSwitch.h"
 
 
-CPointSwitch::CPointSwitch(unsigned int pinNumber, unsigned int pinMode, unsigned int pullAndDown, gpioCallBack fun)
+CPointSwitch::CPointSwitch(unsigned int pinNumber, unsigned int pinMode, unsigned int pullAndDown, gpioAlertFunc_t callBackFun)
 {
 
     m_PinNumber = pinNumber;
     m_PinMode = pinMode;
     m_PullAndDown = pullAndDown; 
+    printf("pin:%d mode:%d pullOrDown:%d\n", pinNumber, pinMode, pullAndDown);
     gpioSetMode(m_PinNumber, m_PinMode);
     gpioSetPullUpDown(m_PinNumber, pullAndDown);
-    gpioSetAlertFunc(m_PinNumber, &gpioAlertFunc);
-    callback = fun;
+    gpioSetAlertFunc(m_PinNumber, callBackFun);
+
     
 
 }
@@ -33,10 +34,4 @@ int CPointSwitch::getValue(unsigned int &value)
     value = gpioRead(value);
     return 0;
 }
-void CPointSwitch::gpioAlertFunc(int gpio, int level, unsigned int tick)
-{
-    if(callback != NULL)
-    {
-        callback(level);
-    }
-}
+

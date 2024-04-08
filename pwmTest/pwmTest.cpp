@@ -4,8 +4,8 @@
 #include "pigpio.h"
 #include <unistd.h>
 
-#define PWM_MODE_500US
-#define GPIO_PIN 20
+#define PWM_MODE_2500US
+#define GPIO_PIN 21
 
 
 
@@ -25,10 +25,16 @@ int main( void)
 	gpioWrite(GPIO_PIN, 1);
 	gpioSetPWMrange(GPIO_PIN, 180);
 	gpioSetPWMfrequency(GPIO_PIN, 50);
-	gpioPWM(GPIO_PIN, 22);
-
+	for(int i = 0; i < 10; i++)
+	{
+	
+		gpioPWM(GPIO_PIN, 22);
+		sleep(4);
+		gpioPWM(GPIO_PIN, 5);
+		sleep(4);
+	}
     //gpioSetPullUpDown(2, pullAndDown);
-	sleep(10);
+
 	gpioTerminate();
 }
 #endif

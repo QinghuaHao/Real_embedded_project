@@ -10,8 +10,8 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <string.h>
-//#include "PointSwitch.h"
-//#include "SteeringEngine.h"
+#include "PointSwitch.h"
+#include "SteeringEngine.h"
 
 #define SERVER_PORT		10000
 #define SERVER_IP		"192.168.137.4"
@@ -29,13 +29,26 @@ void signal_handler(int arg)
  
 
 
-void CallBack(int level)
-{
-    if(level == PI_PUD_UP)
-    {
 
-    }
+
+CSteeringEngine steeringEngine1(26, 0);
+CSteeringEngine steeringEngine2(19, 0);
+
+void callBackFun(int pin, int level, unsigned int tick)
+{
+	if(level == 1)
+    	{
+		steeringEngine1.setStatus(180);
+		steeringEngine2.setStatus(180);
+		printf("switch is 1 open the door\n");
+   	}
+   	else
+   	{
+    
+	}
+	//printf("pin:%d level:%d\n", pin, level);
 }
+
 int main( void)
 {
 
@@ -47,12 +60,16 @@ int main( void)
 	{
    		printf("pigpio initialisation ok.\n");
 	}
-/*
-	CPointSwitch pointSwitch1(8, PI_INPUT, PI_PUD_UP, &CallBack);
-	CPointSwitch pointSwitch2(9, PI_INPUT, PI_PUD_UP, &CallBack);
-	CSteeringEngine steeringEngine1(10, 250);
-	CSteeringEngine steeringEngine2(10, 250);
-*/
+
+
+	CPointSwitch pointSwitch1(15, PI_INPUT, PI_PUD_DOWN, callBackFun);
+	CPointSwitch pointSwitch2(16, PI_INPUT, PI_PUD_DOWN, callBackFun);
+	CPointSwitch pointSwitch3(21, PI_INPUT, PI_PUD_DOWN, callBackFun);
+	CPointSwitch pointSwitch4(20, PI_INPUT, PI_PUD_DOWN, callBackFun);
+
+	steeringEngine1.init();
+	steeringEngine2.init();
+	sleep(20);
 
    	int ret = 0;
 	int new_fd  = -1;
@@ -83,7 +100,7 @@ int main( void)
 		printf("listen error!\n");
 		return -1;
 	}
- 	unsigned int rbuf[256] = {0};
+ 	unsigned char rbuf[256] = {0};
 	int size = 0;
 	while (1)
 	{
@@ -112,11 +129,15 @@ int main( void)
 			{
 				ret = 0;
 				printf("open the door \n");
+				steeringEngine1.setStatus(180);
+				steeringEngine2.setStatus(180);
             		}
 			else if(rbuf[0] == 0)//receive tcp and close door
 			{
 				printf("close the door \n");
 				ret = 0;
+				steeringEngine1.setStatus(0);
+				steeringEngine2.setStatus(0);
 			}
 			else
 			{
