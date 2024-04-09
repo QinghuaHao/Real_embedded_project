@@ -14,7 +14,7 @@
 #include "SteeringEngine.h"
 
 #define SERVER_PORT		10000
-#define SERVER_IP		"192.168.137.4"
+#define SERVER_IP		"169.254.148.1"
 
 
 
@@ -31,15 +31,15 @@ void signal_handler(int arg)
 
 
 
-CSteeringEngine steeringEngine1(26, 0);
-CSteeringEngine steeringEngine2(19, 0);
+CSteeringEngine steeringEngine1(26, 40);//left
+CSteeringEngine steeringEngine2(19, 150);//right
 
 void callBackFun(int pin, int level, unsigned int tick)
 {
 	if(level == 1)
     	{
-		steeringEngine1.setStatus(180);
-		steeringEngine2.setStatus(180);
+		steeringEngine1.setStatus(40);
+		steeringEngine2.setStatus(150);
 		printf("switch is 1 open the door\n");
    	}
    	else
@@ -129,15 +129,15 @@ int main( void)
 			{
 				ret = 0;
 				printf("open the door \n");
-				steeringEngine1.setStatus(180);
-				steeringEngine2.setStatus(180);
+				steeringEngine1.setStatus(40);
+				steeringEngine2.setStatus(150);
             		}
 			else if(rbuf[0] == 0)//receive tcp and close door
 			{
 				printf("close the door \n");
 				ret = 0;
-				steeringEngine1.setStatus(0);
-				steeringEngine2.setStatus(0);
+				steeringEngine1.setStatus(106);
+				steeringEngine2.setStatus(90);
 			}
 			else
 			{
