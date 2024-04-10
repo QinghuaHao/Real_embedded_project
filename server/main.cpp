@@ -14,7 +14,7 @@
 #include "SteeringEngine.h"
 
 #define SERVER_PORT		10000
-#define SERVER_IP		"169.254.148.1"
+#define SERVER_IP		"169.254.148.17"
 
 
 
