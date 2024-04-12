@@ -20,30 +20,30 @@ There are three terminals, one for the drive voltage 5V, one for the GND, and th
 ## Software Introduction
 ### The Application of SOLID Principle:
 
-#### The Best Choice of Class:
+- #### The Best Choice of Class:
 Our system implements two main classes: CPointSwitch for handling point switching logic, and CSteeringEngine for managing the steering engine (gate mechanism). These classes follow the principle of single responsibility and the open-close principle, allowing extensions without modifying the existing code base.
 
 
 ### Encapsulation and data management:
 
-#### Data encapsulation in class:
+- #### Data encapsulation in class:
 All members of the CPointSwitch and CSteeringEngine are private, ensuring encapsulation. Accessors (getters) and modifiers (setters) are provided to manipulate these members safely.
 
-#### Secure Use of Getters, Setters, Callbacks, and Data Management:
+- #### Secure Use of Getters, Setters, Callbacks, and Data Management:
 Class provides a secure interface to the client, with exposed methods for securely setting and obtaining pin values. Error checking is simple but present, ensuring that unexpected values do not disrupt GPIO operation.
 
 ### Memory Management:
 
-#### Memory Management:
+- #### Memory Management:
 The code does not use dynamic memory allocation and relies on stack and static allocation, minimizing the risk of memory leaks. The pigpio library is used to manage low-level hardware interactions, which abstracts the details of memory management from the user.
 
 
 ### Real-time Coding and Event Processing:
 
-#### Real-time Codeing:
+- #### Real-time Codeing:
 We used the capabilities of the pigpio library to handle GPIO interrupts and signal callbacks, allowing our system to react to real-time events with little to no significant delay.
 
-#### Real-time Event Processing:
+- #### Real-time Event Processing:
 gpioSetAlertFunc is used to set callback functions for specific GPIO pins, allowing our system to handle events in real time, such as the opening and closing of door switches.
 
 
@@ -51,16 +51,16 @@ gpioSetAlertFunc is used to set callback functions for specific GPIO pins, allow
 
 The project consists of multiple components working together to ensure efficient and reliable operation.
 
-#### main.cpp:
+- #### main.cpp:
 It is the entry point to the application. It initializes the GPIO, sets the point switch and steering engine, and listens for server commands to control the door.
 
-#### PointSwitch.h & PointSwitch.cpp:
+- #### PointSwitch.h & PointSwitch.cpp:
 These files define the CPointSwitch class and its methods for interacting with the door switch.
 
-#### SteeringEngine.h & SteeringEngine.cpp:
+- #### SteeringEngine.h & SteeringEngine.cpp:
 These files define the CSteeringEngine class responsible for controlling the steering engine of the gate.
 
-#### gpioTest.cpp, pwmTest.cpp & pmwTest.cpp:
+- #### gpioTest.cpp, pwmTest.cpp & pmwTest.cpp:
 These test files demonstrate the ability to control GPIO and PWM through the pigpio library.
 
 
