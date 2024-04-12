@@ -1,2 +1,7 @@
 add readme
-111
+# Description
+The real-time embedded system completes the design of the metro door anti-pinch control system taking into account the hardware configuration, Raspberry Pi control and the effective integration of software algorithms.
+
+In the hardware part, the team selected high sensitivity and fast response pressure sensors evenly distributed on both sides of the door to ensure complete coverage. In addition, infrared sensors were applied to the human detection module, covering the entire height of the door to form a continuous infrared barrier for effective detection of objects regardless of their size. As the core part of the control, the team used a Raspberry Pi to connect all the sensors and transmit the data to servomoto to ensure precise control of the door. The team used the Raspberry Pi's GPIO library and the C++ programming language to develop the control management software to process and respond to the sensor signals.4 The software decision logic is programmed based on the sensor data, and as soon as an abnormal pressure or infrared interruption is detected the system performs an immediate exception, which can include pausing to close the door or reopening it.
+
+After integrating all hardware and software components, the team performed integration testing to verify the system's real-time responsiveness. Through simulation testing and continuous adjustment of the sensor sensitivity, servo moto rotation angle and response thresholds, the team optimised the software parameters and algorithms to significantly improve the accuracy and reliability of the system.
