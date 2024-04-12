@@ -10,9 +10,14 @@ ClientWidget::ClientWidget(QWidget *parent)
     setWindowTitle("Client");
     tcpSocket = nullptr;
     tcpSocket =new QTcpSocket(this);
-    connect(tcpSocket,&QTcpSocket::connected,[=]()
+    connect(tcpSocket,&QTcpSocket::connected,this,[=]()
     {
-
+        ui->pushButtonConnect->setEnabled(false);
+    });
+    connect(tcpSocket,&QTcpSocket::readyRead,this,[=]()
+    {
+        QByteArray array = tcpSocket->readAll();
+        ui->textEdit->append(array);
     });
     connect(ui->pushButtonOpen, &QPushButton::clicked, this, &ClientWidget::on_pushButtonOpen_clicked);
     connect(ui->pushButtonClose, &QPushButton::clicked, this, &ClientWidget::on_pushButtonClose_clicked);
@@ -31,7 +36,7 @@ void ClientWidget::on_pushButtonConnect_clicked()
         return;
 
     }
-    //获取IP 端口号
+    //get ip port
     QString ip = ui->lineEditIP->text();
     quint16 port = ui->lineEditPort->text().toInt();
     tcpSocket->connectToHost(ip,port);
@@ -48,6 +53,7 @@ void ClientWidget::on_pushButtonClose_clicked()
         return;
     tcpSocket->disconnectFromHost();
     tcpSocket->close();
+    ui->pushButtonConnect->setEnabled(true);
 }
 
 
@@ -55,7 +61,7 @@ void ClientWidget::on_pushButtonOpen_clicked()
 {
     if(tcpSocket == nullptr)
         return;
-    // 发送数字1表示开门
+    // open door
     tcpSocket->write("1");
 }
 
@@ -64,7 +70,7 @@ void ClientWidget::on_pushButtonCloseDoor_clicked()
 {
     if(tcpSocket == nullptr)
         return;
-    // 发送数字0表示关门
+    // close door
     tcpSocket->write("0");
 }
 

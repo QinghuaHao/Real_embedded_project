@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 13.0.0, 2024-04-12T04:59:56. -->
+<!-- Written by QtCreator 13.0.0, 2024-04-12T16:27:09. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -241,10 +241,10 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
     <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph dwarf,4096 -F 250</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/Users/haoqinghua/Desktop/TCP/TCP.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/Users/haoqinghua/Desktop/TCP/TCP.pro</value>
-    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">TCP2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/Users/haoqinghua/Desktop/Real_embedded_project/TCP/TCP.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/Users/haoqinghua/Desktop/Real_embedded_project/TCP/TCP.pro</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
