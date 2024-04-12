@@ -18,13 +18,13 @@ The driving voltage is 5V, and one end is grounded. The signal cable in the midd
 There are three terminals, one for the drive voltage 5V, one for the GND, and the last for the signal interface. The Raspberry PI receives the signals of the two detection devices, processes them, and sends them to Servo Moto through the signal line to adjust the angle of the door opening.
 
 # Software Introduction
-***The Application of SOLID Principle:***
+***1. The Application of SOLID Principle:***
 
 **The Best Choice of Class:**
 Our system implements two main classes: CPointSwitch for handling point switching logic, and CSteeringEngine for managing the steering engine (gate mechanism). These classes follow the principle of single responsibility and the open-close principle, allowing extensions without modifying the existing code base.
 
 
-***Encapsulation and data management:***
+***2. Encapsulation and data management:***
 
 **Data encapsulation in class:**
 All members of the CPointSwitch and CSteeringEngine are private, ensuring encapsulation. Accessors (getters) and modifiers (setters) are provided to manipulate these members safely.
@@ -33,13 +33,13 @@ All members of the CPointSwitch and CSteeringEngine are private, ensuring encaps
 Class provides a secure interface to the client, with exposed methods for securely setting and obtaining pin values. Error checking is simple but present, ensuring that unexpected values do not disrupt GPIO operation.
 
 
-***Memory Management:***
+***3. Memory Management:***
 
 **Memory Management:**
 The code does not use dynamic memory allocation and relies on stack and static allocation, minimizing the risk of memory leaks. The pigpio library is used to manage low-level hardware interactions, which abstracts the details of memory management from the user.
 
 
-***Real-time Coding and Event Processing:***
+***4. Real-time Coding and Event Processing:***
 
 **Real-time Codeing:**
 We used the capabilities of the pigpio library to handle GPIO interrupts and signal callbacks, allowing our system to react to real-time events with little to no significant delay.
@@ -48,7 +48,7 @@ We used the capabilities of the pigpio library to handle GPIO interrupts and sig
 gpioSetAlertFunc is used to set callback functions for specific GPIO pins, allowing our system to handle events in real time, such as the opening and closing of door switches.
 
 
-***Project Structure:***
+***5. Project Structure:***
 
 The project consists of multiple components working together to ensure efficient and reliable operation.
 
