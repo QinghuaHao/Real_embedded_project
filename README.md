@@ -146,18 +146,25 @@ Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or 
 | TA03    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Bu Qianyi     |
 | TA04    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Zhang Yuelian |
 
-# 7.介绍一下未来的工作展望
+## Outlook of Future Work
 
-增强服务器功能，提高可靠性和安全性。这可能包括实现更好的错误处理、加固通信通道或添加新功能，如远程监控或控制能力。
+- Server functions can be enhanced to improve reliability and security. This could include implementing better error handling, hardening communication channels, or adding new features such as remote monitoring or control capabilities.
 
-为部署准备系统，包括最终确定硬件设置、优化软件以适应生产环境，并在与预期使用案例类似的实际条件下进行测试。
+- We can prepare the system for deployment includes finalizing the hardware setup, optimizing the software for production, and testing it under real-world conditions similar to the intended use case.
 
-考虑增加物联网(loT)功能，使系统能够与其他设备或通过互联网通信。
-如果项目的范围和需求扩大，可以实现 业"学习或高级算法，例如用于预测性维护或自动决策。
+- Internet of Things (loT) capabilities can be added to enable the system to communicate with other devices or over the Internet.
 
-# 8.介绍一下团队
 
-郝清华/张悦莲/卜千一/范yi坤
+## Team Introduction 
+
+| Name      | Email                  | Contributions                                   | Github             |
+|-----------|------------------------|-------------------------------------------------|--------------------|
+|Qinghua Hao|
+
+
+
+
+
 
 # 9 .介绍一下推广的的媒体
 
