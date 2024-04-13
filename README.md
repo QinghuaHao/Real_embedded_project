@@ -1,5 +1,5 @@
 # Metro Door Anti-Pinch Control System
- ![Poster](images/Poster.png)
+![Poster](/images/Poster.png)
 ## Description
 The real-time embedded system completes the design of the metro door anti-pinch control system taking into account the hardware configuration, Raspberry Pi control and the effective integration of software algorithms.
 
@@ -12,7 +12,7 @@ After integrating all hardware and software components, the team performed integ
 
 ## Hardware Connection
 
-![嵌入式硬件连接图](/Users/haoqinghua/Desktop/嵌入式硬件连接图.png) 
+![Hardware Connection](/images/Hardware Connection.png) 
 
 ### Limit Switch:
 The driving voltage is 3.3V, and the other port is connected to the Raspberry PI GPIO port. The switch status is obtained by monitoring the value of the GPIO port.
@@ -22,6 +22,8 @@ The driving voltage is 5V, and one end is grounded. The signal cable in the midd
 
 ### Servo Moto:
 There are three terminals, one for the drive voltage 5V, one for the GND, and the last for the signal interface. The Raspberry PI receives the signals of the two detection devices, processes them, and sends them to Servo Moto through the signal line to adjust the angle of the door opening.
+
+![Equipment Diagram](/images/Equipment Diagram.png)
 
 ## Software Development
 
