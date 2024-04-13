@@ -12,7 +12,7 @@ After integrating all hardware and software components, the team performed integ
 
 ## Hardware Connection
 
-![Hardware Connection](/images/Hardware Connection.png) 
+![Hardware Connection](/images/Hardware_Connection.png) 
 
 ### Limit Switch:
 The driving voltage is 3.3V, and the other port is connected to the Raspberry PI GPIO port. The switch status is obtained by monitoring the value of the GPIO port.
@@ -23,7 +23,7 @@ The driving voltage is 5V, and one end is grounded. The signal cable in the midd
 ### Servo Moto:
 There are three terminals, one for the drive voltage 5V, one for the GND, and the last for the signal interface. The Raspberry PI receives the signals of the two detection devices, processes them, and sends them to Servo Moto through the signal line to adjust the angle of the door opening.
 
-![Equipment Diagram](/images/Equipment Diagram.png)
+![Equipment Diagram](/images/Equipment_Diagram.png)
 
 ## Software Development
 
