@@ -7,7 +7,13 @@ In the hardware part, the team selected high sensitivity and fast response press
 
 After integrating all hardware and software components, the team performed integration testing to verify the system's real-time responsiveness. Through simulation testing and continuous adjustment of the sensor sensitivity, servo moto rotation angle and response thresholds, the team optimised the software parameters and algorithms to significantly improve the accuracy and reliability of the system.
 
+![image-20240412021831841](/Users/haoqinghua/Library/Application Support/typora-user-images/image-20240412021831841.png)
+
+
 ## Hardware Connection
+
+![嵌入式硬件连接图](/Users/haoqinghua/Desktop/嵌入式硬件连接图.png) 
+
 ### Limit Switch:
 The driving voltage is 3.3V, and the other port is connected to the Raspberry PI GPIO port. The switch status is obtained by monitoring the value of the GPIO port.
 
@@ -17,51 +23,125 @@ The driving voltage is 5V, and one end is grounded. The signal cable in the midd
 ### Servo Moto:
 There are three terminals, one for the drive voltage 5V, one for the GND, and the last for the signal interface. The Raspberry PI receives the signals of the two detection devices, processes them, and sends them to Servo Moto through the signal line to adjust the angle of the door opening.
 
-## Software Introduction
-### The Application of SOLID Principle:
+## Software Development
 
-- #### The Best Choice of Class:
-Our system implements two main classes: CPointSwitch for handling point switching logic, and CSteeringEngine for managing the steering engine (gate mechanism). These classes follow the principle of single responsibility and the open-close principle, allowing extensions without modifying the existing code base.
+### Development Overview
+
+This project is designed and implemented with strict adherence to development requirements, emphasizing the principles of software engineering, particularly the Single Responsibility Principle (SRP). The project is structured into three main functional modules:
+
+- Switch Status Monitoring Module
+- Steering Engine Control Module
+- Main Control Module
+
+Each module has been developed to fulfill a specific responsibility within the project, ensuring a clean, maintainable codebase.
+
+### Components
+
+#### 1. Switch Status Monitoring Module
+
+**Files**: `PointSwitch.h`, `PointSwitch.cpp`
+
+This module consists of the `CPointSwitch` class, which is responsible for managing interactions with the door's physical switches.
+
+**Key Features**:
+
+- **GPIO Interaction**: Manages electrical level signals related to the door's physical switches, including initialization of port modes and statuses.
+- **Encapsulation**: Private data members like `m_PinNumber`, `m_PinMode`, and `m_PullAndDown` are securely accessed and modified via `getValue` and `setValue` methods.
+- **Real-Time Event Handling**: Utilizes `gpioSetAlertFunc` for immediate response to GPIO port status changes.
+
+#### 2. Steering Engine Control Module
+
+**Files**: `SteeringEngine.h`, `SteeringEngine.cpp`
+
+The `CSteeringEngine` class within this module handles the control over the door's steering engine.
+
+**Key Features**:
+
+- **PWM Control**: Provides interfaces for adjusting and controlling the servo angles connected to GPIO ports, including servo initialization and position adjustment through PWM signals.
+- **Encapsulation**: Includes members like `m_Frequency`, `m_Range`, `m_PinNumber`, and `m_InitStatus` for better data management.
+
+#### 3. Main Control Module
+
+**File**: `main.cpp`
+
+Serves as the application's entry point, initializing GPIOs, configuring point switches and steering engines, and processing server commands to manage the door's movements.
+
+**Key Features**:
+
+- **Initialization and Configuration**: Creates instances of `CPointSwitch` and `CSteeringEngine`, setting up their initial states.
+- **Socket Communication**: Receives and processes commands from TCP clients to control the door.
+- **Resource Management**: Implements a signal handling function `signal_handler` for safe system resource management upon termination.
+- **TCP Server Setup**: Facilitates network instruction reception for servo control.
 
 
-### Encapsulation and data management:
+## INSTALLATION GUIDE
 
-- #### Data encapsulation in class:
-All members of the CPointSwitch and CSteeringEngine are private, ensuring encapsulation. Accessors (getters) and modifiers (setters) are provided to manipulate these members safely.
+### Step 1: Download the Files via Git
 
-- #### Secure Use of Getters, Setters, Callbacks, and Data Management:
-Class provides a secure interface to the client, with exposed methods for securely setting and obtaining pin values. Error checking is simple but present, ensuring that unexpected values do not disrupt GPIO operation.
+```
+git clone https://github.com/QinghuaHao/Real_embedded_project.git
+```
 
-### Memory Management:
+In the repository, you'll find three key files: gpioTest, pwmTest, and server. 
 
-- #### Memory Management:
-The code does not use dynamic memory allocation and relies on stack and static allocation, minimizing the risk of memory leaks. The pigpio library is used to manage low-level hardware interactions, which abstracts the details of memory management from the user.
+### Step 2: gpioTest
 
-
-### Real-time Coding and Event Processing:
-
-- #### Real-time Codeing:
-We used the capabilities of the pigpio library to handle GPIO interrupts and signal callbacks, allowing our system to react to real-time events with little to no significant delay.
-
-- #### Real-time Event Processing:
-gpioSetAlertFunc is used to set callback functions for specific GPIO pins, allowing our system to handle events in real time, such as the opening and closing of door switches.
+gpioTest is used for testing the GPIO ports on the Raspberry Pi.
+After compiling, you can run the gpioTest executable file:
 
 
-### Project Structure:
+```
+cd /gpioTest
+make
+sudo ./gpioTest
+```
 
-The project consists of multiple components working together to ensure efficient and reliable operation.
+### Step 3: pwmTest
+This program tests the rotation of servos.
 
-- #### main.cpp:
-It is the entry point to the application. It initializes the GPIO, sets the point switch and steering engine, and listens for server commands to control the door.
+You can change the macro definitions to set the servo to rotate to 0 degrees or 180 degrees:
 
-- #### PointSwitch.h & PointSwitch.cpp:
-These files define the CPointSwitch class and its methods for interacting with the door switch.
+```
+cd pwmTest
+make
+sudo ./pwmTest
+```
 
-- #### SteeringEngine.h & SteeringEngine.cpp:
-These files define the CSteeringEngine class responsible for controlling the steering engine of the gate.
+### Step 4: server
+This is the complete program for our project.
 
-- #### gpioTest.cpp, pwmTest.cpp & pmwTest.cpp:
-These test files demonstrate the ability to control GPIO and PWM through the pigpio library.
+Change the macro definitions in the main file to the IP address of this Raspberry Pi, with the port set to 10000:
+
+```
+cd server
+make
+sudo ./server
+```
+
+After running the program, you will see a success message.
+
+Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or '1' to control switches.
 
 
+## Evaluation
 
+### Individual Test Cases
+
+| Test ID | Description                 | Preconditions                           | Test Steps                                                           | Expected Result                           | Actual Result     | Tester  |
+|---------|-----------------------------|-----------------------------------------|----------------------------------------------------------------------|-------------------------------------------|-------------------|---------|
+| TC01    | GPIO Test                   | 1. Power off the system<br />2. Connect servo to GPIO port             | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Observe the printout  | Printout: “pigpio initialisation ok”    | As expected       | Bu Qianyi |
+| TC02    | TCP Debugging               | 1. Raspberry Pi connected to network<br />2. Power off the system     | 1. Power on<br />2. Adjust Raspberry Pi IP address<br />3. Recompile<br />4. Run the program<br />5. Connect using TCP client | Printout: “new client connected”         | As expected       | Fan Yikun |
+| TC03    | Micro Switch Test           | 1. Power off the system<br />2. Micro switch connected correctly       | 1. Power on<br />2. Compile the program<br /><br />3. Run the program<br />4. Press the micro switch | Printout: GPIO port value is 1           | GPIO port value is 1 | Bu Qianyi |
+| TC04    | Human Detection Module Test | 1. Power off the system<br />2. Human detection module set up correctly | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Manually block the human detection module | Printout: GPIO port number is 1         | As expected       | Fan Yikun |
+| TC05    | Servo Test                  | 1. Power off the system<br />2. Servo connected correctly             | 1. Power on<br /><br />2. Set rotation angle to 0<br />3. Compile the program<br />4. Run the program<br />5. Observe the servo<br />6. Change rotation angle<br />7. Recompile and run<br />8. Observe the servo | Servo rotates                             | Servo rotates     | Zhang Yuelian |
+| TC06    | Full System Test            | 1. Power off the system<br />2. All modules connected correctly        | 1. Power on<br />2. Change IP address<br />3. Set rotation angles to 0 and 180<br />4. Compile the program<br />5. Run the program<br />6. Connect from client<br />7. Send data | Observe left and right servos rotating, check if sensor state changes reverse the servo direction |                   | Zhang Yuelian |
+
+
+### System Integration Test Cases
+
+| Test ID | Description       | Preconditions                    | Test Steps                                                                             | Expected Result              | Actual Result   | Tester      |
+|---------|-------------------|----------------------------------|----------------------------------------------------------------------------------------|------------------------------|-----------------|-------------|
+| TA01    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Zhang Yuelian |
+| TA02    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Fan Yikun     |
+| TA03    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Bu Qianyi     |
+| TA04    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Zhang Yuelian |
