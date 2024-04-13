@@ -1,4 +1,4 @@
-# Metro Door Anti-pinch Control System
+# Metro Door Anti-Pinch Control System
  ![Poster](/Poster.png)
 ## Description
 The real-time embedded system completes the design of the metro door anti-pinch control system taking into account the hardware configuration, Raspberry Pi control and the effective integration of software algorithms.
