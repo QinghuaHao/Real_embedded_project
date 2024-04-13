@@ -74,7 +74,7 @@ Serves as the application's entry point, initializing GPIOs, configuring point s
 - **TCP Server Setup**: Facilitates network instruction reception for servo control.
 
 
-## INSTALLATION GUIDE
+## Installation Guide
 
 ### Step 1: Download the Files via Git
 
@@ -145,3 +145,20 @@ Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or 
 | TA02    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Fan Yikun     |
 | TA03    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Bu Qianyi     |
 | TA04    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Zhang Yuelian |
+
+# 7.介绍一下未来的工作展望
+
+增强服务器功能，提高可靠性和安全性。这可能包括实现更好的错误处理、加固通信通道或添加新功能，如远程监控或控制能力。
+
+为部署准备系统，包括最终确定硬件设置、优化软件以适应生产环境，并在与预期使用案例类似的实际条件下进行测试。
+
+考虑增加物联网(loT)功能，使系统能够与其他设备或通过互联网通信。
+如果项目的范围和需求扩大，可以实现 业"学习或高级算法，例如用于预测性维护或自动决策。
+
+# 8.介绍一下团队
+
+郝清华/张悦莲/卜千一/范yi坤
+
+# 9 .介绍一下推广的的媒体
+
+三个媒体/放上视频
