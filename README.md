@@ -7,7 +7,7 @@ In the hardware part, the team selected high sensitivity and fast response press
 
 After integrating all hardware and software components, the team performed integration testing to verify the system's real-time responsiveness. Through simulation testing and continuous adjustment of the sensor sensitivity, servo moto rotation angle and response thresholds, the team optimised the software parameters and algorithms to significantly improve the accuracy and reliability of the system.
 
-![image-20240412021831841](/Users/haoqinghua/Library/Application Support/typora-user-images/image-20240412021831841.png)
+![Equipment_Diagram_3D](/images/Equipment_Diagram_3D.png)
 
 
 ## Hardware Connection
@@ -160,7 +160,7 @@ Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or 
 
 - Server functions can be enhanced to improve reliability and security. This could include implementing better error handling, hardening communication channels, or adding new features such as remote monitoring or control capabilities.
 
-- We can prepare the system for deployment includes finalizing the hardware setup, optimizing the software for production, and testing it under real-world conditions similar to the intended use case.
+- The system can be prepared for deployment includes finalizing the hardware setup, optimizing the software for production, and testing it under real-world conditions similar to the intended use case.
 
 - Internet of Things (IoT) capabilities can be added to enable the system to communicate with other devices or over the Internet.
 
