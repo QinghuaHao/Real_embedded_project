@@ -157,12 +157,12 @@ Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or 
 
 ## Team Introduction 
 
-| Name      | Email                  | Contributions                                   | Github             |
-|-----------|------------------------|-------------------------------------------------|--------------------|
-|Qinghua Hao|
-
-
-
+| Name          | Email                    | Contributions                                   | Github                                    |
+|-------------- |--------------------------|-------------------------------------------------|-------------------------------------------|
+| Qinghua Hao   |2645408h@student.gla.ac.uk|                                                 |[QinghuaHao](https://github.com/QinghuaHao)|
+| Yuelian Zhang |2737199z@student.gla.ac.uk|                                                 |
+| Yikun Fan     |2857239f@student.gla.ac.uk|
+| Qianyi Bu     |2921072B@student.gla.ac.uk|                                                 |[Buqianyi](https://github.com/Buqianyi)|
 
 
 
