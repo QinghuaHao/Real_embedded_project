@@ -125,19 +125,27 @@ Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or 
 
 ## Evaluation
 
-### Individual Test Cases
+### Basic Module Tests
 
-| Test ID | Description                 | Preconditions                           | Test Steps                                                           | Expected Result                           | Actual Result     | Tester  |
-|---------|-----------------------------|-----------------------------------------|----------------------------------------------------------------------|-------------------------------------------|-------------------|---------|
-| TC01    | GPIO Test                   | 1. Power off the system<br />2. Connect servo to GPIO port             | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Observe the printout  | Printout: “pigpio initialisation ok”    | As expected       | Bu Qianyi |
-| TC02    | TCP Debugging               | 1. Raspberry Pi connected to network<br />2. Power off the system     | 1. Power on<br />2. Adjust Raspberry Pi IP address<br />3. Recompile<br />4. Run the program<br />5. Connect using TCP client | Printout: “new client connected”         | As expected       | Fan Yikun |
-| TC03    | Micro Switch Test           | 1. Power off the system<br />2. Micro switch connected correctly       | 1. Power on<br />2. Compile the program<br /><br />3. Run the program<br />4. Press the micro switch | Printout: GPIO port value is 1           | GPIO port value is 1 | Bu Qianyi |
-| TC04    | Human Detection Module Test | 1. Power off the system<br />2. Human detection module set up correctly | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Manually block the human detection module | Printout: GPIO port number is 1         | As expected       | Fan Yikun |
-| TC05    | Servo Test                  | 1. Power off the system<br />2. Servo connected correctly             | 1. Power on<br /><br />2. Set rotation angle to 0<br />3. Compile the program<br />4. Run the program<br />5. Observe the servo<br />6. Change rotation angle<br />7. Recompile and run<br />8. Observe the servo | Servo rotates                             | Servo rotates     | Zhang Yuelian |
-| TC06    | Full System Test            | 1. Power off the system<br />2. All modules connected correctly        | 1. Power on<br />2. Change IP address<br />3. Set rotation angles to 0 and 180<br />4. Compile the program<br />5. Run the program<br />6. Connect from client<br />7. Send data | Observe left and right servos rotating, check if sensor state changes reverse the servo direction |                   | Zhang Yuelian |
+| Test ID | Description      | Preconditions                              | Test Steps                                                               | Expected Result                       | Actual Result     | Tester   |
+|---------|------------------|--------------------------------------------|--------------------------------------------------------------------------|---------------------------------------|-------------------|----------|
+| TC01    | GPIO Test        | 1. System powered off<br />2. Servo connected to GPIO port             | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Observe the printout | Printout: “pigpio initialisation ok” | As expected       | Bu Qianyi |
+| TC02    | TCP Debugging    | 1. System powered off<br />2. Raspberry Pi connected to network        | 1. Power on<br />2. Adjust Raspberry Pi IP address<br />3. Compile the program<br />4. Run the program<br />5. Connect using tcp client | Printout: “new client connected”     | As expected       | Fan Yikun |
+| TC03    | Micro Switch Test| 1. System powered off<br />2. Micro switch connected correctly         | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Press the micro switch | Printout: GPIO port value is 1        | GPIO port value is 1 | Bu Qianyi |
+| TC04    | Servo Test       | 1. System powered off<br />2. Servo module connected correctly         | 1. Power on<br />2. Set rotation angle to 0<br />3. Compile the program<br />4. Run the program<br />5. Observe the servo<br />6. Change rotation angle<br />7. Recompile and run<br />8. Observe the servo | Servo rotates                         | Servo rotates     | Fan Yikun |
 
 
-### System Integration Test Cases
+
+### Human Detection Device Sensitivity Tests
+
+| Test ID | Description           | Preconditions                                  | Test Steps                                                                | Expected Result              | Actual Result | Tester      |
+|---------|-----------------------|------------------------------------------------|---------------------------------------------------------------------------|------------------------------|---------------|-------------|
+| HM01    | Human Detection Module Test | 1. System powered off<br />2. Human detection module set up correctly | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Block detection module at 15 cm | Printout: GPIO port number is 1 | Printed as 1  | Zhang Yuelian |
+| HM02    | Human Detection Module Test | 1. System powered off<br />2. Human detection module set up correctly | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Block detection module at 15 cm | Printout: GPIO port number is 1 | Printed as 0  | Zhang Yuelian |
+| HM03    | Human Detection Module Test | 1. System powered off<br />2. Human detection module set up correctly | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Block detection module at 10 cm | Printout: GPIO port number is 1 | Printed as 1  | Zhang Yuelian |
+
+
+### System Integration Tests
 
 | Test ID | Description       | Preconditions                    | Test Steps                                                                             | Expected Result              | Actual Result   | Tester      |
 |---------|-------------------|----------------------------------|----------------------------------------------------------------------------------------|------------------------------|-----------------|-------------|
