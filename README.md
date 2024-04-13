@@ -179,4 +179,5 @@ Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or 
 ## Our Social Media
 
 
-三个媒体/放上视频
+![image](https://github.com/QinghuaHao/Real_embedded_project/assets/88808616/60f1e4de-ae71-476d-9ebd-0b87c71fc932)
+
