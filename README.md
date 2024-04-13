@@ -152,17 +152,17 @@ Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or 
 
 - We can prepare the system for deployment includes finalizing the hardware setup, optimizing the software for production, and testing it under real-world conditions similar to the intended use case.
 
-- Internet of Things (loT) capabilities can be added to enable the system to communicate with other devices or over the Internet.
+- Internet of Things (IoT) capabilities can be added to enable the system to communicate with other devices or over the Internet.
 
 
 ## Team Introduction 
 
-| Name          | Email                    | Contributions                                   | Github                                    |
-|-------------- |--------------------------|-------------------------------------------------|-------------------------------------------|
-| Qinghua Hao   |2645408h@student.gla.ac.uk|                                                 |[QinghuaHao](https://github.com/QinghuaHao)|
-| Yuelian Zhang |2737199z@student.gla.ac.uk|                                                 |
-| Yikun Fan     |2857239f@student.gla.ac.uk|
-| Qianyi Bu     |2921072B@student.gla.ac.uk|                                                 |[Buqianyi](https://github.com/Buqianyi)|
+| Name          | Email                    | Resposibilities                                  | Github                                            |
+|-------------- |--------------------------|--------------------------------------------------|---------------------------------------------------|
+| Qinghua Hao   |2645408h@student.gla.ac.uk|                                                  |[QinghuaHao](https://github.com/QinghuaHao)        |
+| Yuelian Zhang |2737199z@student.gla.ac.uk|                                                  |[Yoli1219](https://github.com/Yoli1219)            |
+| Yikun Fan     |2857239f@student.gla.ac.uk|                                                  |[LuMingJun62511](https://github.com/LuMingJun62511)|
+| Qianyi Bu     |2921072B@student.gla.ac.uk|Responsible for hardware and software development and system tests|[Buqianyi](https://github.com/Buqianyi)            |
 
 
 
