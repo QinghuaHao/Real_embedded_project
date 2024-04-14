@@ -1,5 +1,5 @@
-# Metro Door Anti-Pinch Control System
-![Poster](/images/Poster.png)
+# Subway Door Anti-Trap Control System
+
 ## Description
 The real-time embedded system completes the design of the metro door anti-pinch control system taking into account the hardware configuration, Raspberry Pi control and the effective integration of software algorithms.
 
@@ -131,10 +131,10 @@ Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or 
 
 | Test ID | Description      | Preconditions                              | Test Steps                                                               | Expected Result                       | Actual Result     | Tester   |
 |---------|------------------|--------------------------------------------|--------------------------------------------------------------------------|---------------------------------------|-------------------|----------|
-| TC01    | GPIO Test        | 1. System powered off<br />2. Servo connected to GPIO port             | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Observe the printout | Printout: “pigpio initialisation ok” | As expected       | Bu Qianyi |
-| TC02    | TCP Debugging    | 1. System powered off<br />2. Raspberry Pi connected to network        | 1. Power on<br />2. Adjust Raspberry Pi IP address<br />3. Compile the program<br />4. Run the program<br />5. Connect using tcp client | Printout: “new client connected”     | As expected       | Fan Yikun |
-| TC03    | Micro Switch Test| 1. System powered off<br />2. Micro switch connected correctly         | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Press the micro switch | Printout: GPIO port value is 1        | GPIO port value is 1 | Bu Qianyi |
-| TC04    | Servo Test       | 1. System powered off<br />2. Servo module connected correctly         | 1. Power on<br />2. Set rotation angle to 0<br />3. Compile the program<br />4. Run the program<br />5. Observe the servo<br />6. Change rotation angle<br />7. Recompile and run<br />8. Observe the servo | Servo rotates                         | Servo rotates     | Fan Yikun |
+| TC01    | GPIO Test        | 1. System powered off<br />2. Servo connected to GPIO port             | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Observe the printout | Printout: “pigpio initialisation ok” | As expected       | Qianyi Bu |
+| TC02    | TCP Debugging    | 1. System powered off<br />2. Raspberry Pi connected to network        | 1. Power on<br />2. Adjust Raspberry Pi IP address<br />3. Compile the program<br />4. Run the program<br />5. Connect using tcp client | Printout: “new client connected”     | As expected       | Yikun Fan |
+| TC03    | Micro Switch Test| 1. System powered off<br />2. Micro switch connected correctly         | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Press the micro switch | Printout: GPIO port value is 1        | GPIO port value is 1 | Qianyi Bu |
+| TC04    | Servo Test       | 1. System powered off<br />2. Servo module connected correctly         | 1. Power on<br />2. Set rotation angle to 0<br />3. Compile the program<br />4. Run the program<br />5. Observe the servo<br />6. Change rotation angle<br />7. Recompile and run<br />8. Observe the servo | Servo rotates                         | Servo rotates     | Yikun Fan |
 
 
 
@@ -142,19 +142,19 @@ Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or 
 
 | Test ID | Description           | Preconditions                                  | Test Steps                                                                | Expected Result              | Actual Result | Tester      |
 |---------|-----------------------|------------------------------------------------|---------------------------------------------------------------------------|------------------------------|---------------|-------------|
-| HM01    | Human Detection Module Test | 1. System powered off<br />2. Human detection module set up correctly | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Block detection module at 15 cm | Printout: GPIO port number is 1 | Printed as 1  | Zhang Yuelian |
-| HM02    | Human Detection Module Test | 1. System powered off<br />2. Human detection module set up correctly | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Block detection module at 15 cm | Printout: GPIO port number is 1 | Printed as 0  | Zhang Yuelian |
-| HM03    | Human Detection Module Test | 1. System powered off<br />2. Human detection module set up correctly | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Block detection module at 10 cm | Printout: GPIO port number is 1 | Printed as 1  | Zhang Yuelian |
+| HM01    | Human Detection Module Test | 1. System powered off<br />2. Human detection module set up correctly | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Block detection module at 15 cm | Printout: GPIO port number is 1 | Printed as 1  | Yuelian Zhang |
+| HM02    | Human Detection Module Test | 1. System powered off<br />2. Human detection module set up correctly | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Block detection module at 15 cm | Printout: GPIO port number is 1 | Printed as 0  | Yuelian Zhang |
+| HM03    | Human Detection Module Test | 1. System powered off<br />2. Human detection module set up correctly | 1. Power on<br />2. Compile the program<br />3. Run the program<br />4. Block detection module at 10 cm | Printout: GPIO port number is 1 | Printed as 1  | Yuelian Zhang |
 
 
 ### System Integration Tests
 
 | Test ID | Description       | Preconditions                    | Test Steps                                                                             | Expected Result              | Actual Result   | Tester      |
 |---------|-------------------|----------------------------------|----------------------------------------------------------------------------------------|------------------------------|-----------------|-------------|
-| TA01    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Zhang Yuelian |
-| TA02    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Fan Yikun     |
-| TA03    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Bu Qianyi     |
-| TA04    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Zhang Yuelian |
+| TA01    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Yuelian Zhang |
+| TA02    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Yikun Fan    |
+| TA03    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Qianyi Bu    |
+| TA04    | Door Frame Closure| 1. Power off the system<br />2. Hardware installation complete | 1. Power on<br />2. Set left and right servos to close door angles<br />3. Recompile<br />4. Run the program<br />5. Connect client<br />6. Send 0, 1 | Door closes without triggering the limit switch | Triggered limit switch | Yuelian Zhang |
 
 ## Outlook of Future Work
 
@@ -179,6 +179,6 @@ Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or 
 ## Our Social Media and Demo
 
 
-![image](https://github.com/QinghuaHao/Real_embedded_project/assets/88808616/60f1e4de-ae71-476d-9ebd-0b87c71fc932)
+![1681713052606_ pic](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/2d0bd6a8-9dac-4fde-bb1c-8b47dc7fde26)
 
 [Demo](https://youtu.be/VgQ18dWRal4)
