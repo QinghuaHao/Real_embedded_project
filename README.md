@@ -182,3 +182,8 @@ Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or 
 ![1681713052606_ pic](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/2d0bd6a8-9dac-4fde-bb1c-8b47dc7fde26)
 
 [![Demo](/images/Youtube.png)(https://youtu.be/kTEyXDGin4w)
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
