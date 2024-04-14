@@ -15,6 +15,7 @@ After integrating all hardware and software components, the team performed integ
 ![Hardware Connection](/images/Hardware_Connection.png) 
 
 ### Limit Switch:
+
 The driving voltage is 3.3V, and the other port is connected to the Raspberry PI GPIO port. The switch status is obtained by monitoring the value of the GPIO port.
 
 ### Moving Human Detection:
