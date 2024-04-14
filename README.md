@@ -1,11 +1,13 @@
 # Subway Door Anti-Trap Control System
 
 ## Description
-The real-time embedded system completes the design of the metro door anti-pinch control system taking into account the hardware configuration, Raspberry Pi control and the effective integration of software algorithms.
+The design of the subway door anti-trap control system in real-time embedded systems took into account the hardware configuration, Raspberry Pi control, and effective integration of software algorithms.
 
-In the hardware part, the team selected high sensitivity and fast response pressure sensors evenly distributed on both sides of the door to ensure complete coverage. In addition, infrared sensors were applied to the human detection module, covering the entire height of the door to form a continuous infrared barrier for effective detection of objects regardless of their size. As the core part of the control, the team used a Raspberry Pi to connect all the sensors and transmit the data to servomoto to ensure precise control of the door. The team used the Raspberry Pi's GPIO library and the C++ programming language to develop the control management software to process and respond to the sensor signals.4 The software decision logic is programmed based on the sensor data, and as soon as an abnormal pressure or infrared interruption is detected the system performs an immediate exception, which can include pausing to close the door or reopening it.
+In the hardware segment, our team selected high-sensitivity, rapid-response pressure sensors evenly distributed on both sides of the door to ensure complete coverage. Additionally, infrared sensors were employed in the human detection module, covering the entire height of the door to form a continuous infrared barrier that can effectively detect objects of any size. As the control core, our team used a Raspberry Pi to connect all sensors and transmit data to the servo moto, ensuring precise control of the doors. 
 
-After integrating all hardware and software components, the team performed integration testing to verify the system's real-time responsiveness. Through simulation testing and continuous adjustment of the sensor sensitivity, servo moto rotation angle and response thresholds, the team optimised the software parameters and algorithms to significantly improve the accuracy and reliability of the system.
+The control management software was developed using the Raspberry Pi's GPIO library and the C++ programming language to process and respond to sensor signals. The software's decision logic was programmed based on sensor data, and the system immediately executes exception handling, including pausing door closure or reopening, upon detecting abnormal pressure or an infrared interruption. 
+
+After integrating all hardware and software components, our team conducted integration testing to verify the system's real-time responsiveness. Through simulation tests and continuous adjustments of sensor sensitivity, servo moto rotation angles, and response thresholds, the team optimized software parameters and algorithms, significantly enhancing the system's accuracy and reliability.
 
 ![Equipment_Diagram_3D](/images/Equipment_Diagram_3D.png)
 
