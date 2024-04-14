@@ -53,7 +53,7 @@ This module consists of the `CPointSwitch` class, which is responsible for manag
 - **GPIO Interaction**: Manages electrical level signals related to the door's physical switches, including initialization of port modes and statuses.
 - **Encapsulation**: Private data members like `m_PinNumber`, `m_PinMode`, and `m_PullAndDown` are securely accessed and modified via `getValue` and `setValue` methods.
 - **Real-Time Event Handling**: Utilizes `gpioSetAlertFunc` for immediate response to GPIO port status changes.
-- **Memory Leak Prevention**: Utilizes destructor `~CPointSwitch` to ensures all dynamically allocated resources are properly released, preventing memory leaks. 
+- **Robust Memory Management**: Utilizes destructor `~CPointSwitch` to ensures all dynamically allocated resources are properly released, preventing memory leaks. 
 
 #### 2. Steering Engine Control Module
 
@@ -75,10 +75,26 @@ Serves as the application's entry point, initializing GPIOs, configuring point s
 
 **Key Features**:
 
-- **Initialization and Configuration**: Creates instances of `CPointSwitch` and `CSteeringEngine`, setting up their initial states.
+- **Initialization and Configuration**: Initializes GPIOs and configures both point switches and steering engines to their initial states for immediate readiness.
 - **Socket Communication**: Receives and processes commands from TCP clients to control the door.
 - **Resource Management**: Implements a signal handling function `signal_handler` for safe system resource management upon termination.
 - **TCP Server Setup**: Facilitates network instruction reception for servo control.
+- **Multi-Threading for Concurrent Processing**: Utilizes the POSIX thread library (`pthread`) to create a separate thread for message sending. Each thread handles sending messages from a buffer to connected clients over a network socket. This separation allows the main thread to concurrently accept new connections and perform additional tasks without blocking on network I/O operations.
+
+
+#### 4. XML Parsing and Handling Module
+
+**File**: `parseXmlApi.h`, `parseXmlApi.cpp`
+
+Provides functionality for parsing and handling XML files, utilizing the TinyXML library.
+
+**Key Features**:
+
+- **XML Loading and Saving**: Utilizes functions like `load_xml` and `save_xml` to manage loading from XML files or string data and saving XML structures back to files, ensuring data persistence.
+- **XML Manipulation**: Offers the `add_xml` function for merging XML structures, which aids in dynamically modifying XML configurations at runtime.
+- **Data Retrieval**: Features functions such as `GetValue` and `GetChild` to facilitate easy access to attributes and child elements within an XML document, crucial for configuration and settings management.
+- **Data Export**: Provides `GetData` and `GetXmlData` functions for extracting XML data into strings, enabling the transfer or storage of XML content in various formats or mediums.
+
 
 
 ## Installation Guide
