@@ -2,6 +2,7 @@ FILES = \
         main.cpp \
 	PointSwitch.cpp \
  	SteeringEngine.cpp \
+	parseXmlApi.cpp
 
 OBJS = $(patsubst %.cpp, %.o, $(FILES))
 
@@ -9,6 +10,7 @@ DIR = $(foreach n,$(dir $(FILES)),.obj/$(n))
 
 INCLUDES +=$(foreach n,$(dir $(FILES)),-I $(n))
 INCLUDES += -I ./
+INCLUDES += -I ../tinyxml
 
 
 
@@ -20,7 +22,7 @@ CPPFLAGS= -g -Wall -O0
 CPPFLAGS  +=   -fomit-frame-pointer 
 CPPFLAGS  +=  -Wall -Wundef -Wpointer-arith -fPIC
 
-LIBS = -lpthread -lrt  -lm -lpigpio
+LIBS = -lpthread -lrt  -lm -lpigpio -ltinyxml -lpthread
 LIBPATH = \
           -L ./ \
  
