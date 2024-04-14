@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config Version="1.0">
+	<TCPCONFIG Ip="169.254.148.17" Port="10000"/>
+</config>
