@@ -50,6 +50,7 @@ This module consists of the `CPointSwitch` class, which is responsible for manag
 - **GPIO Interaction**: Manages electrical level signals related to the door's physical switches, including initialization of port modes and statuses.
 - **Encapsulation**: Private data members like `m_PinNumber`, `m_PinMode`, and `m_PullAndDown` are securely accessed and modified via `getValue` and `setValue` methods.
 - **Real-Time Event Handling**: Utilizes `gpioSetAlertFunc` for immediate response to GPIO port status changes.
+- **Memory Leak Prevention**: Utilizes destructor `~CPointSwitch` to ensures all dynamically allocated resources are properly released, preventing memory leaks. 
 
 #### 2. Steering Engine Control Module
 
@@ -61,6 +62,7 @@ The `CSteeringEngine` class within this module handles the control over the door
 
 - **PWM Control**: Provides interfaces for adjusting and controlling the servo angles connected to GPIO ports, including servo initialization and position adjustment through PWM signals.
 - **Encapsulation**: Includes members like `m_Frequency`, `m_Range`, `m_PinNumber`, and `m_InitStatus` for better data management.
+- **Memory Leak Prevention**: Utilizes destructor `~CSteeringEngine` to ensures all dynamically allocated resources are properly released, preventing memory leaks. 
 
 #### 3. Main Control Module
 
