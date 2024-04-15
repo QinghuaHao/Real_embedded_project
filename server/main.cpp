@@ -123,7 +123,7 @@ void *msgSend(void *args)
 			size = write(new_fd, msgBuffer.msg[msgBuffer.readPos].c_str(), msgBuffer.msg[msgBuffer.readPos].length());
 			if (size < 0)
 			{
-				printf("write error!\n");
+//				printf("write error!\n");
 				break;
 			}
 			printf("msgSend:%s\n", msgBuffer.msg[msgBuffer.readPos].c_str());
