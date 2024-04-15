@@ -132,8 +132,7 @@ sudo ./pwmTest
 
 ### Step 4: server
 This is the complete program for our project.
-
-Change the macro definitions in the main file to the IP address of this Raspberry Pi, with the port set to 10000:
+Open config.xml, change IP and port
 
 ```
 cd server
@@ -142,8 +141,9 @@ sudo ./server
 ```
 
 After running the program, you will see a success message.
+Open the client, open the project with QT, and compile it. Enter the IP address and port ID, after connecting successfully, the connect button cannot be used anymore until clicking the close button. As the figure shows below, it can control open and close the door successfully.
+![image](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/5e40eb55-431f-4bef-b572-e998fc017e86)
 
-Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or '1' to control switches.
 
 
 ## Evaluation
