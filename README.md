@@ -5,7 +5,7 @@
 ## Description
 The design of the subway door anti-trap control system in real-time embedded systems considered the hardware configuration, Raspberry Pi control, and effective integration of software algorithms.
 
-In the hardware segment, the team selected high-sensitivity, rapid-response pressure sensors evenly distributed on both sides of the door to ensure complete coverage. Additionally, the human detection module covered the entire height of the door to form a continuous infrared barrier that can effectively detect objects of any size. As the control core, the team used a Raspberry Pi to connect all sensors and transmit data to the servo motor, ensuring precise control of the doors.
+In the hardware segment, the team selected high-sensitivity, rapid-response pressure sensors evenly distributed on both sides of the door to ensure complete coverage. Additionally, the human detection module covered the entire height of the door to form a continuous infrared barrier that can effectively detect objects of any size. As the control core, the team used a Raspberry Pi to connect all sensors and transmit data to the servo moto, ensuring precise control of the doors.
 
 The control management software was developed using Raspberry Pi's GPIO library and the C++ programming language to process and respond to sensor signals. The software's decision logic was programmed based on sensor data. The system immediately executes exception processing, including pausing door closure and reopening, upon detecting abnormal pressure or objects.
 
@@ -86,7 +86,7 @@ Serves as the application's entry point, initializing GPIOs, configuring point s
 
 ![Flowchart](/images/Flowchart.png)
 
-#### 4. XML Parsing and Handling Module
+#### 4. XML Parsing and Module Processing
 
 **File**: `parseXmlApi.h`, `parseXmlApi.cpp`
 
@@ -196,7 +196,7 @@ Notes: If the TCP.exe cannot work, it can be compiled by QT6. The source code of
 | Qinghua Hao   |2645408h@student.gla.ac.uk|[QinghuaHao](https://github.com/QinghuaHao)        |
 | Yuelian Zhang |2737199z@student.gla.ac.uk|[Yoli1219](https://github.com/Yoli1219)            |
 | Yikun Fan     |2857239f@student.gla.ac.uk|[LuMingJun62511](https://github.com/LuMingJun62511)|
-| Qianyi Bu     |2921072B@student.gla.ac.uk|[Buqianyi](https://github.com/Buqianyi)            |
+| Qianyi Bu     |2921072b@student.gla.ac.uk|[Buqianyi](https://github.com/Buqianyi)            |
 
 ## Gantt Chart-Timeline 
 ![2581713136614_ pic](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/f448c8eb-148a-4a87-aff2-8be54fe60f67)
@@ -206,7 +206,7 @@ Notes: If the TCP.exe cannot work, it can be compiled by QT6. The source code of
 
 ![1681713052606_ pic](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/2d0bd6a8-9dac-4fde-bb1c-8b47dc7fde26)
 
-[![Demo](/images/Youtube.png)(https://youtu.be/kTEyXDGin4w)
+![Demo](/images/Youtube.png)(https://youtu.be/kTEyXDGin4w)
 
 
 ## License
