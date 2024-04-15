@@ -142,9 +142,7 @@ sudo ./server
 
 After running the program, you will see a success message.
 Open the client, open the project with QT, and compile it. Enter the IP address and port ID, after connecting successfully, the connect button cannot be used anymore until clicking the close button. As the figure shows below, it can control open and close the door successfully.
-![image](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/5e40eb55-431f-4bef-b572-e998fc017e86)
-
-
+![5811713142118_ pic](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/1717ee74-5db1-4d21-8367-db03433ded3d)
 
 ## Evaluation
 
