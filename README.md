@@ -8,7 +8,6 @@ In the hardware segment, the team selected high-sensitivity, rapid-response pres
 The control management software was developed using Raspberry Pi's GPIO library and the C++ programming language to process and respond to sensor signals. The software's decision logic was programmed based on sensor data. The system immediately executes exception processing, including pausing door closure and reopening, upon detecting abnormal pressure or objects.
 
 After integrating all hardware and software components, the team conducted integration testing to verify the system's real-time responsiveness. The team optimized software parameters and algorithms through simulation tests and continuous adjustments of sensor sensitivity, servo moto rotation angles, and response thresholds, significantly enhancing the system's accuracy and reliability.
-![image](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/0677870a-f68b-4b28-b0f8-de57d38db760)
 
 
 ![Equipment_Diagram_3D](/images/Equipment_Diagram_3D.png)
