@@ -143,8 +143,7 @@ sudo ./server
 
 After running the program, there will be a success message. Then the user can switch to release file and click the TCP.exe (The operating system must be Windows). Enter the IP address and Port ID, after connecting successfully, the connect button cannot be used anymore until clicking the close button. As the figure shows below, it can control the door open and close successfully.
 
-![5851713147530_ pic](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/10bcf128-04ff-403f-8050-eaaec9b3d837)
-
+![5861713147636_ pic](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/a6c45689-3b43-4bad-bc08-1dcfd9f5e5f9)
 
 Notes: If the TCP.exe cannot work, it can be compiled by QT6. The source code of the client is placed in the TCP folder. Open the client and the project with QT, and compile it.
 ## Evaluation
