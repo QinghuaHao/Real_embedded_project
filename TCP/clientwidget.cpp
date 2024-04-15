@@ -18,8 +18,8 @@ ClientWidget::ClientWidget(QWidget *parent)
     connect(tcpSocket,&QTcpSocket::readyRead,this,[=]()
     {
         QByteArray array = tcpSocket->readAll();
-        QString hexString = array.toHex(' ');
-        ui->textEdit->append(hexString);
+        // QString hexString = array.toHex(' ');
+        ui->textEdit->append(array);
     });
     connect(ui->pushButtonOpen, &QPushButton::clicked, this, &ClientWidget::on_pushButtonOpen_clicked);
     connect(ui->pushButtonClose, &QPushButton::clicked, this, &ClientWidget::on_pushButtonClose_clicked);

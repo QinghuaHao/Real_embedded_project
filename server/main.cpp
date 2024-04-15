@@ -238,7 +238,7 @@ int main( void)
 				close(new_fd);
 				break;
 			}
-			if(rbuf[0] == 1) //receive tcp and opend door
+			if(rbuf[0] == '1') //receive tcp and opend door
 			{
 				tmpStr = "cmd:open the door \n";
 				printf("%s \n", tmpStr.c_str());
@@ -248,7 +248,7 @@ int main( void)
 
 
             		}
-			else if(rbuf[0] == 0)//receive tcp and close door
+			else if(rbuf[0] == '0')//receive tcp and close door
 			{
 				tmpStr = "cmd:close the door \n";
 				printf("%s \n", tmpStr.c_str());
