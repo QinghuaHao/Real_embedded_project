@@ -84,6 +84,7 @@ Serves as the application's entry point, initializing GPIOs, configuring point s
 - **TCP Server Setup**: Facilitates network instruction reception for servo control.
 - **Multi-Threading for Concurrent Processing**: Utilizes the POSIX thread library (`pthread`) to create a separate thread for message sending. Each thread handles sending messages from a buffer to connected clients over a network socket. This separation allows the main thread to concurrently accept new connections and perform additional tasks without blocking on network I/O operations.
 
+![Flowchart](/images/Flowchart.png)
 
 #### 4. XML Parsing and Handling Module
 
