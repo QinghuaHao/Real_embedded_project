@@ -1,13 +1,15 @@
 # Subway Door Anti-Trap Control System
 
 ## Description
-The design of the subway door anti-trap control system in real-time embedded systems took into account the hardware configuration, Raspberry Pi control, and effective integration of software algorithms.
+The design of the subway door anti-trap control system in real-time embedded systems considered the hardware configuration, Raspberry Pi control, and effective integration of software algorithms.
 
-In the hardware segment, our team selected high-sensitivity, rapid-response pressure sensors evenly distributed on both sides of the door to ensure complete coverage. Additionally, infrared sensors were employed in the human detection module, covering the entire height of the door to form a continuous infrared barrier that can effectively detect objects of any size. As the control core, our team used a Raspberry Pi to connect all sensors and transmit data to the servo moto, ensuring precise control of the doors. 
+In the hardware segment, the team selected high-sensitivity, rapid-response pressure sensors evenly distributed on both sides of the door to ensure complete coverage. Additionally, the human detection module covered the entire height of the door to form a continuous infrared barrier that can effectively detect objects of any size. As the control core, the team used a Raspberry Pi to connect all sensors and transmit data to the servo motor, ensuring precise control of the doors.
 
-The control management software was developed using the Raspberry Pi's GPIO library and the C++ programming language to process and respond to sensor signals. The software's decision logic was programmed based on sensor data, and the system immediately executes exception handling, including pausing door closure or reopening, upon detecting abnormal pressure or an infrared interruption. 
+The control management software was developed using Raspberry Pi's GPIO library and the C++ programming language to process and respond to sensor signals. The software's decision logic was programmed based on sensor data. The system immediately executes exception processing, including pausing door closure and reopening, upon detecting abnormal pressure or objects.
 
-After integrating all hardware and software components, our team conducted integration testing to verify the system's real-time responsiveness. Through simulation tests and continuous adjustments of sensor sensitivity, servo moto rotation angles, and response thresholds, the team optimized software parameters and algorithms, significantly enhancing the system's accuracy and reliability.
+After integrating all hardware and software components, the team conducted integration testing to verify the system's real-time responsiveness. The team optimized software parameters and algorithms through simulation tests and continuous adjustments of sensor sensitivity, servo moto rotation angles, and response thresholds, significantly enhancing the system's accuracy and reliability.
+![image](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/0677870a-f68b-4b28-b0f8-de57d38db760)
+
 
 ![Equipment_Diagram_3D](/images/Equipment_Diagram_3D.png)
 
