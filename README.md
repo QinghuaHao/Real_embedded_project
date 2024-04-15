@@ -208,3 +208,6 @@ Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Gantt Chart-Timeline 
+![2581713136614_ pic](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/f448c8eb-148a-4a87-aff2-8be54fe60f67)
