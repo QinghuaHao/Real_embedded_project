@@ -203,10 +203,14 @@ Notes: If the TCP.exe cannot work, it can be compiled by QT6. The source code of
 
 ## Our Social Media and Demo
 
-
+### Instagram
 ![1681713052606_ pic](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/2d0bd6a8-9dac-4fde-bb1c-8b47dc7fde26)
 
-![Tiktok](/images/Tiktok.jpg)
+### TikTok
+
+![4161713189019_ pic](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/c0719489-c704-4531-94de-26b729e23198)
+
+### Youtube
 
 ![Demo](/images/Youtube.png)(https://youtu.be/kTEyXDGin4w)
 
