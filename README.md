@@ -195,7 +195,8 @@ Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or 
 | Yikun Fan     |2857239f@student.gla.ac.uk|[LuMingJun62511](https://github.com/LuMingJun62511)|
 | Qianyi Bu     |2921072B@student.gla.ac.uk|[Buqianyi](https://github.com/Buqianyi)            |
 
-
+## Gantt Chart-Timeline 
+![2581713136614_ pic](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/f448c8eb-148a-4a87-aff2-8be54fe60f67)
 
 ## Our Social Media and Demo
 
@@ -209,5 +210,3 @@ Then, connect to this program using a TCP client (e.g., TCPclient). Send '0' or 
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Gantt Chart-Timeline 
-![2581713136614_ pic](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/f448c8eb-148a-4a87-aff2-8be54fe60f67)
