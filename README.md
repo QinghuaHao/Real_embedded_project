@@ -1,5 +1,7 @@
 # Subway Door Anti-Trap Control System
 
+![3211713148819_ pic](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/ac88df7d-3840-4b76-ac2f-914ad7da1aab)
+
 ## Description
 The design of the subway door anti-trap control system in real-time embedded systems considered the hardware configuration, Raspberry Pi control, and effective integration of software algorithms.
 
