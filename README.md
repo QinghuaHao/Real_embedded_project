@@ -205,6 +205,7 @@ Notes: If the TCP.exe cannot work, it can be compiled by QT6. The source code of
 
 
 ![1681713052606_ pic](https://github.com/QinghuaHao/Real_embedded_project/assets/128492068/2d0bd6a8-9dac-4fde-bb1c-8b47dc7fde26)
+![Tiktok](/images/Tiktok.jpg)
 
 ![Demo](/images/Youtube.png)(https://youtu.be/kTEyXDGin4w)
 
